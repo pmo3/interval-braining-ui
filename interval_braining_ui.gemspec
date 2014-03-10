@@ -13,7 +13,11 @@ Gem::Specification.new do |spec|
 
   spec.test_files = spec.files.grep(%r{^test/})
 
-  spec.add_dependency 'rails', '~> 4.0.3'
+  spec.add_dependency 'rails', '~> 4.0.0'
+  spec.add_dependency 'rack-offline'
+  spec.add_dependency 'angularjs-rails'
+  spec.add_dependency 'font-awesome-rails'
+  spec.add_dependency 'sass-rails', '~> 4.0.0'
 
   spec.add_development_dependency 'factory_girl_rails'
   spec.add_development_dependency 'faker'
