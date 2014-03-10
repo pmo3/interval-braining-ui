@@ -20,4 +20,8 @@ Rake::TestTask.new(:test) do |t|
 end
 
 
-task default: :test
+task :default => [:test, 'app:test:javascripts']
+
+namespace :test do
+  task :javascripts => ['app:test:javascripts']
+end

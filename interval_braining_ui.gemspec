@@ -16,4 +16,7 @@ Gem::Specification.new do |spec|
   spec.add_dependency 'rails', '~> 4.0.3'
 
   spec.add_development_dependency 'pg'
+  spec.add_development_dependency 'factory_girl_rails'
+  spec.add_development_dependency 'faker'
+  spec.add_development_dependency 'shoulda-context'
 end
