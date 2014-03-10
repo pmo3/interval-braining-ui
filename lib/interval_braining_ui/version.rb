@@ -1,0 +1,3 @@
+module IntervalBrainingUI
+  VERSION = '0.0.1'
+end

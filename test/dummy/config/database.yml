@@ -1,0 +1,13 @@
+development:
+  adapter: postgresql
+  encoding: unicode
+  database: interval_braining_ui_dummy_development
+  pool: 5
+  username: postgres
+
+test:
+  adapter: postgresql
+  encoding: unicode
+  database: interval_braining_ui_dummy_test
+  pool: 5
+  username: postgres
