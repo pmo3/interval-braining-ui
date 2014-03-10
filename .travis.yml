@@ -1,0 +1,21 @@
+before_install:
+  - env
+
+bundler_args: --without assets doc
+
+cache:
+  - bundler
+  - apt
+
+language: ruby
+
+matrix:
+  allow_failures:
+    - rvm: rbx-2
+    - rvm: jruby-20mode
+
+rvm:
+  - 1.9.3
+  - 2.1.0
+  - rbx-2
+  - jruby-20mode
