@@ -6,4 +6,4 @@ test/dummy/log/*.log
 test/dummy/tmp/
 test/dummy/.sass-cache
 test/dummy/public/assets/
-test/dummy/db
+test/dummy/db/schema.rb
