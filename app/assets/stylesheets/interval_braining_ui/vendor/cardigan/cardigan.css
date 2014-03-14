@@ -1,0 +1,37 @@
+card,
+[card],
+.card {
+  /*-moz-box-shadow: 0 .125em .25em 0 rgba(63, 63, 63, .3);*/
+  /*-webkit-box-shadow: 0 .125em .25em 0 rgba(63, 63, 63, .3);*/
+  background-color: #fff;
+  box-shadow: 0 0.12em 0.25em 0 rgba(63, 63, 63, 0.3);
+  padding: 1em;
+  position: relative;
+}
+
+card-dismiss,
+[card-dismiss],
+.card-dismiss {
+  cursor: pointer;
+  height: 1em;
+  position: absolute;
+  right: .5em;
+  top: .5em;
+  width: 1em;
+}
+
+card-dismiss:after,
+[card-dismiss]:after,
+.card-dismiss:after {
+  color: #777;
+  content: "x";
+  display: block;
+  font: 1em monospace, sans-serif;
+  text-align: center;
+}
+
+card-dismiss:hover:after,
+[card-dismiss]:hover:after,
+.card-dismiss:hover:after {
+  color: #444;
+}

@@ -1,0 +1,8 @@
+<div ng-class="pageHeader.class()" class="page-header">
+  <h1>{{pageHeader.title()}}</h1>
+  <ol breadcrumbs class="breadcrumb">
+    <li ng-repeat="breadcrumb in breadcrumbs">
+      <a ui-sref="{{breadcrumb.stateName}}">{{breadcrumb.text}}</a>
+    </li>
+  </ol>
+</div>

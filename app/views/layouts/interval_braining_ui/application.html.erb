@@ -1,14 +1,21 @@
 <!DOCTYPE html>
-<html>
+<html lang="en" ng-app="IntervalBraining">
   <head>
-    <title>IntervalBraining</title>
-    <%= stylesheet_link_tag 'interval_braining_ui/application', media: 'all' %>
-    <%= javascript_include_tag 'interval_braining_ui/application' %>
+    <%= render 'interval_braining_ui/components/head/meta' %>
+    <title><%= content_for?(:title) ? yield(:title) : 'IntervalBraining' %></title>
     <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag 'application', media: 'all' %>
+    <%= render 'interval_braining_ui/components/head/favicons' %>
+    <%= render 'interval_braining_ui/components/head/ie' %>
   </head>
   <body>
-
-  <%= yield %>
-
+    <div ng-include="'components/navbar'"></div>
+    <div class="container-fluid">
+      <div ng-include="'components/page_header'"></div>
+      <div ui-view class="row">
+      </div>
+    </div>
+    <%= javascript_include_tag 'application' %>
   </body>
 </html>

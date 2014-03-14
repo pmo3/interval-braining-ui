@@ -1,0 +1,45 @@
+@import "../variables/colors";
+
+.icon-brand {
+  background: asset-url("interval_braining_ui/interval_braining.svg") no-repeat center;
+  background-size: contain;
+  display: inline-block;
+  margin: -.5em .25em -.25em 0;
+  height: 1.75em;
+  vertical-align: middle;
+  width: 2em;
+}
+
+.navbar {
+  background-color: $background-color-2;
+  margin-bottom: 0;
+}
+
+.navbar a,
+.navbar a:hover,
+.navbar button,
+.navbar .nav li a:active,
+.navbar .nav li a:focus,
+.navbar .nav li a:hover {
+  background-color: transparent;
+  color: inherit;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.navbar input[type="text"] {
+  background-color: $background-color-3;
+}
+
+.navbar .fa:last-child {
+  margin-left: .5em;
+}
+
+.navbar .fa:first-child {
+  margin-right: .5em;
+}
+
+
+.navbar-toggle .icon-bar {
+  background-color: $color-1;
+}
