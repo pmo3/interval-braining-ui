@@ -1,5 +1,7 @@
 (function() {
-  var stateHome = angular.module('states.home', []);
+  var stateHome = angular.module('states.home', [
+    'services.currentUser'
+  ]);
 
   stateHome.constant('stateHome', function(url) {
     var controller = [function() {}];
@@ -8,6 +10,13 @@
       breadcrumb: 'Home',
       controller: controller,
       data: {
+        beforeState: ['currentUser', function(currentUser) {
+          if(!currentUser.authenticated) {
+            return {
+              to: 'session'
+            };
+          }
+        }],
         pageTitle: {
           defaultValue: 'Welcome!'
         },
@@ -15,7 +24,7 @@
           class: 'blue'
         }
       },
-      template: 'So maybe a nav of common actions here?',
+      template: '',
       url: url
     };
   });
