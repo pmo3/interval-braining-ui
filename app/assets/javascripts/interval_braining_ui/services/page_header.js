@@ -13,7 +13,8 @@
       var pageHeader = stateAttr.new('pageHeader', {resetValueOnStateChange: true});
 
       function defaultTitleBuilder($state, pageTitle) {
-        return pageTitle.value().defaultValue;
+        var value = pageTitle.value();
+        return value && value.defaultValue;
       }
 
       pageHeader.class = function() {
