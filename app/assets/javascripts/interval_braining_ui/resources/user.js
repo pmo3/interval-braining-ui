@@ -3,8 +3,8 @@
 
   userResource.factory('userResource', [
     '$resource',
-    function() {
-      return {};
+    function($resource) {
+      return $resource('/users/:id.json');
     }
   ]);
 })();
