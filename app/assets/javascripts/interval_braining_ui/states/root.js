@@ -1,7 +1,7 @@
 (function() {
 
   function StateRoot($stateProvider, $templateUrl) {
-    this.abstact = true;
+    this.abstract = true;
 
     this.data = {
       beforeState: [

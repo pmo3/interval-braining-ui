@@ -1,7 +1,7 @@
 (function() {
 
   function StateHome($stateProvider, $templateUrl) {
-    this.breadcrumb = 'Home',
+    this.breadcrumb = 'Home';
     this.data = {
       pageTitle: {
         defaultValue: 'Welcome!'
