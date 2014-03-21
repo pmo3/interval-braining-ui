@@ -3,17 +3,27 @@
   function StateRoot($stateProvider, $templateUrl) {
     this.abstract = true;
 
-    this.data = {
-      beforeState: [
+    this.name = 'root';
+
+    this.resolve = {
+      currUser: [
         'currentUser',
+        '$state',
         function(currentUser) {
+          return currentUser.get().catch(function() { return null; });
+        }
+      ],
+      redirect: [
+        '$state',
+        'currentUser',
+        'currUser',
+        function($state, currentUser, currUser) {
           if(currentUser.authenticated) { return; }
-          return { to: 'sessions.new' };
+          $state.go('sessions.new');
         }
       ]
     };
 
-    this.name = 'root';
     this.url = '/';
   }
 
