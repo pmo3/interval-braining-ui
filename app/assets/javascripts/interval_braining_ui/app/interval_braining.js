@@ -8,6 +8,7 @@
     'services.$templateUrl',
     'services.pageTitle',
     'services.pageHeader',
+    'directives.inputMatch',
     'directives.navbarCollapse',
     'directives.dropdown',
     'directives.pageTitle',

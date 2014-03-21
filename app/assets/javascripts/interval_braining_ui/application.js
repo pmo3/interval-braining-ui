@@ -5,6 +5,7 @@
 //= require interval_braining_ui/vendor/angular/ui-router-hooks-before-state
 //= require interval_braining_ui/vendor/angular/ui-router-breadcrumbs
 //= require interval_braining_ui/vendor/angular/ui-router-helpers
+//= require interval_braining_ui/vendor/angular/angular-input-match
 //= require interval_braining_ui/vendor/angular/cardigan
 //
 //= require interval_braining_ui/app/interval_braining
