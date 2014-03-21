@@ -1,5 +1,6 @@
 //= require interval_braining_ui/vendor/jquery
 //= require angular
+//= require ng-rails-csrf
 //= require angular-resource
 //= require interval_braining_ui/vendor/angular/ui-router
 //= require interval_braining_ui/vendor/angular/ui-router-hooks-before-state
