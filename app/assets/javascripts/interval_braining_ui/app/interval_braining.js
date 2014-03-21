@@ -5,7 +5,6 @@
     'states',
     'resources.user',
     'services.currentUser',
-    'services.$templateCache',
     'services.pageTitle',
     'services.pageHeader',
     'directives.navbarCollapse',

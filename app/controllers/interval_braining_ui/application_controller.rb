@@ -5,10 +5,5 @@ module IntervalBrainingUI
       render :nothing => true, :layout => 'interval_braining_ui/application'
     end
 
-
-    def templates
-      render 'templates', :layout => false
-    end
-
   end
 end
