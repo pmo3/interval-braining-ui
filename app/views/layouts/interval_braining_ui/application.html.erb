@@ -10,9 +10,9 @@
     <%= render 'interval_braining_ui/components/head/ie' %>
   </head>
   <body>
-    <div ng-include="'components/navbar'"></div>
+    <div ng-include="$templateUrl.get('interval_braining_ui/components/navbar.html')"></div>
     <div class="container-fluid">
-      <div ng-include="'components/page_header'"></div>
+      <div ng-include="$templateUrl.get('interval_braining_ui/components/page_header.html')"></div>
       <div ui-view class="row">
       </div>
     </div>

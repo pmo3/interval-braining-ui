@@ -1,0 +1,22 @@
+<%
+  # Generate lookup Hash of fingerprinted filenames for html templates
+  # Leave regexp open ended to include preprocessed templates (.erb, etc.)
+  template_regexp = /(?:\/assets\/templates\/)(.*\.html)/
+  template_files = Rails.application.assets.each_file.to_a.join("\n").scan(template_regexp).flatten
+  templates = Hash[template_files.map {|file| [file, asset_url(file)] }]
+%>
+
+(function() {
+  var svcTemplateUrl = angular.module('services.$templateUrl', []);
+  svcTemplateUrl.provider('$templateUrl', function() {
+
+    var $templateUrl = {
+      $$templateUrls: <%= templates.to_json %>,
+      $get: function() { return $templateUrl; },
+      get: function(templatePath) { return this.$$templateUrls[templatePath]; }
+    };
+
+    return $templateUrl;
+
+  });
+})();

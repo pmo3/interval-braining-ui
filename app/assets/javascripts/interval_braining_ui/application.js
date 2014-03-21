@@ -19,6 +19,7 @@
 //= require interval_braining_ui/resources/user
 //
 //= require interval_braining_ui/services/current_user
+//= require interval_braining_ui/services/template_url
 //= require interval_braining_ui/services/page_title
 //= require interval_braining_ui/services/page_header
 //
