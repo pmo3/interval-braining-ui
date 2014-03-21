@@ -1,21 +1,33 @@
 (function() {
-  var stateSession = angular.module('states.session', []);
 
-  stateSession.constant('stateSession', function(url) {
-    var controller = [function() {}];
+  function StateSessionNew($stateProvider, $templateUrl) {
+    this.breadcrumb = 'Sign In';
 
-    return {
-      breadcrumb: 'Sign In',
-      controller: controller,
-      data: {
-        beforeAction: [],
-        pageTitle: {
-          defaultValue: 'Sign In'
-        },
-        pageHeader: {}
+    this.data = {
+      // Clear out auth check beforeState filter
+      beforeState: [],
+      pageTitle: {
+        defaultValue: 'Sign In'
       },
-      template: 'Please sign in',
-      url: url
+      pageHeader: {}
     };
-  });
+
+    this.name = 'sessions.new'
+    this.templateUrl = $templateUrl.get('interval_braining_ui/sessions/new.html');
+    this.url = '/signin';
+  }
+
+  angular.module('states.sessions', []).config([
+    'stateFactoryProvider',
+    function(stateFactory) {
+      stateFactory.$new({
+        abstract: true,
+        name: 'sessions',
+        template: '<div ui-view></div>',
+        url: ''
+      });
+      stateFactory.$new(StateSessionNew);
+    }
+  ]);
+
 })();

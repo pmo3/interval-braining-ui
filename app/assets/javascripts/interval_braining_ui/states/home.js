@@ -1,31 +1,26 @@
 (function() {
-  var stateHome = angular.module('states.home', [
-    'services.currentUser'
+
+  function StateHome($stateProvider, $templateUrl) {
+    this.breadcrumb = 'Home',
+    this.data = {
+      pageTitle: {
+        defaultValue: 'Welcome!'
+      },
+      pageHeader: {
+        class: 'blue'
+      }
+    };
+    this.name = 'home';
+    this.parent = 'root';
+    this.template = '';
+    this.url = '';
+  }
+
+  angular.module('states.home', []).config([
+    'stateFactoryProvider',
+    function(stateFactory) {
+      stateFactory.$new(StateHome);
+    }
   ]);
 
-  stateHome.constant('stateHome', function(url) {
-    var controller = [function() {}];
-
-    return {
-      breadcrumb: 'Home',
-      controller: controller,
-      data: {
-        beforeState: ['currentUser', function(currentUser) {
-          if(!currentUser.authenticated) {
-            return {
-              to: 'session'
-            };
-          }
-        }],
-        pageTitle: {
-          defaultValue: 'Welcome!'
-        },
-        pageHeader: {
-          class: 'blue'
-        }
-      },
-      template: '',
-      url: url
-    };
-  });
 })();

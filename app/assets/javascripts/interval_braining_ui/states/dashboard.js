@@ -1,25 +1,28 @@
 (function() {
-  var stateDashboard = angular.module('states.dashboard', []);
 
-  stateDashboard.constant('stateDashboard', function(url) {
-    var controller = [
-      function() { }
-    ];
+  function StateDashboard($stateProvider, $templateUrl) {
+    this.breadcrumb = 'Dashbaord';
 
-    return {
-      breadcrumb: 'Dashbaord',
-      controller: controller,
-      data: {
-        pageTitle: {
-          defaultValue: 'Dashboard'
-        },
-        pageHeader: {
-          class: 'blue'
-        }
+    this.data = {
+      pageTitle: {
+        defaultValue: 'Dashboard'
       },
-      parent: 'home',
-      template: 'Something?',
-      url: url
+      pageHeader: {
+        class: 'blue'
+      }
     };
-  });
+
+    this.name = 'dashboard';
+    this.template = 'Something?';
+    this.parent = 'home';
+    this.url = 'dashboard';
+  }
+
+  angular.module('states.dashboard', []).config([
+    'stateFactoryProvider',
+    function(stateFactory) {
+      stateFactory.$new(StateDashboard);
+    }
+  ]);
+
 })();

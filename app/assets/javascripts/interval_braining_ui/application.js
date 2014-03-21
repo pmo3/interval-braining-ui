@@ -8,11 +8,13 @@
 //= require interval_braining_ui/vendor/angular/cardigan
 //
 //= require interval_braining_ui/app/interval_braining
-//= require interval_braining_ui/app/states
 //
+//= require interval_braining_ui/factories/state_factory
+//= require interval_braining_ui/states/root
 //= require interval_braining_ui/states/home
 //= require interval_braining_ui/states/session
 //= require interval_braining_ui/states/dashboard
+//= require interval_braining_ui/app/states
 //
 //= require interval_braining_ui/resources/user
 //
