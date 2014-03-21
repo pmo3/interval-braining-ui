@@ -5,6 +5,7 @@
     'services.$templateUrl',
     'states.root',
     'states.home',
+    'states.registrations',
     'states.sessions',
     'states.dashboard'
   ]);
