@@ -17,8 +17,10 @@
   app.run([
     '$rootScope',
     '$templateUrl',
-    function($rootScope, $templateUrl) {
-      // add $templateUrl to $rootScope
+    'currentUser',
+    function($rootScope, $templateUrl, currentUser) {
+      // add some services to the $rootScope
+      $rootScope.currentUser = currentUser;
       $rootScope.$templateUrl = $templateUrl;
     }
   ]);

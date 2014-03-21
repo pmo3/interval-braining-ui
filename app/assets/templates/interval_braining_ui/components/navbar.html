@@ -8,6 +8,6 @@
         <span class="icon-bar"></span>
       </button>
     </div>
-    <div ng-include="$templateUrl.get('interval_braining_ui/components/navbar_nav.html')"></div>
+    <div ng-include="currentUser.authenticated && $templateUrl.get('interval_braining_ui/components/navbar_nav.html')"></div>
   </div>
 </div>
