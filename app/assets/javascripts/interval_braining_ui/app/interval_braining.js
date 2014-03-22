@@ -5,6 +5,7 @@
     'factories.stateFactory',
     'states',
     'resources.user',
+    'resources.session',
     'services.currentUser',
     'services.$templateUrl',
     'services.pageTitle',

@@ -3,7 +3,9 @@
 
   currentUserService.factory('currentUser', [
     'userResource',
-    function(userResource) {
+    'sessionResource',
+    '$rootScope',
+    function(userResource, sessionResource, $rootScope) {
       var user,
         currentUser = {},
         promise;
@@ -35,6 +37,12 @@
       };
 
       currentUser.set = function(currUser) { user = currUser; };
+
+      currentUser.signOut = function() {
+        sessionResource['delete']();
+      };
+
+      $rootScope.$on('$sessionDestroy', currentUser.clear);
 
       return currentUser;
     }

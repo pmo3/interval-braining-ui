@@ -1,18 +1,17 @@
 <div card-container class="col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-3">
   <h3>Sign in</h3>
-  <form accept-charset="UTF-8" action="/signin" class="card" id="new_user" method="post">
+  <form accept-charset="UTF-8" class="card" id="new_session" method="post" ng-controller="SessionsController as user" ng-submit="user.submit()" novalidate>
     <div>
-      <label for="user_email">Email</label>
-      <input autofocus="autofocus" id="user_email" name="user[email]" type="email" value="" />
+      <label for="email">Email</label>
+      <input autofocus="autofocus" id="email" name="email" type="email" ng-model="user.email" required/>
     </div>
     <div>
-      <label for="user_password">Password</label>
-      <input id="user_password" name="user[password]" type="password" />
+      <label for="password">Password</label>
+      <input id="password" name="password" type="password" ng-model="user.password" required min="8" />
     </div>
     <div>
-      <input name="user[remember_me]" type="hidden" value="0" />
-      <input id="user_remember_me" name="user[remember_me]" type="checkbox" value="1" />
-      <label for="user_remember_me">Remember me</label>
+      <input id="remember_me" name="remember_me" type="checkbox" ng-model="user.rememberMe" />
+      <label for="remember_me">Remember me</label>
     </div>
     <div>
       <input name="commit" type="submit" value="Sign in" />
