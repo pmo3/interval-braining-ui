@@ -34,3 +34,5 @@
 //= require interval_braining_ui/directives/dropdown
 //= require interval_braining_ui/directives/page_title
 //= require interval_braining_ui/directives/page_header
+//
+//= require interval_braining_ui/app/events
