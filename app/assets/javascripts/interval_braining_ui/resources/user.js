@@ -1,5 +1,7 @@
 (function() {
-  var userResource = angular.module('resources.user', []);
+  var userResource = angular.module('resources.user', [
+    'ngResource'
+  ]);
 
   userResource.factory('userResource', [
     '$resource',

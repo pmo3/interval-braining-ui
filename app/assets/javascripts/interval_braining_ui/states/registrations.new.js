@@ -14,7 +14,7 @@
 
     this.name = 'registrations.new'
     this.templateUrl = $templateUrl.get('interval_braining_ui/registrations/new.html');
-    this.url = '/signup';
+    this.url = '/sign_up';
   }
 
   angular.module('states.registrations', []).config([

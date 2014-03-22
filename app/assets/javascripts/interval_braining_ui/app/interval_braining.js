@@ -16,12 +16,12 @@
     'directives.pageHeader'
   ]);
 
+  // add some services to the $rootScope
   app.run([
     '$rootScope',
     '$templateUrl',
     'currentUser',
     function($rootScope, $templateUrl, currentUser) {
-      // add some services to the $rootScope
       $rootScope.currentUser = currentUser;
       $rootScope.$templateUrl = $templateUrl;
     }

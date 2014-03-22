@@ -14,7 +14,7 @@
 
     this.name = 'sessions.new'
     this.templateUrl = $templateUrl.get('interval_braining_ui/sessions/new.html');
-    this.url = '/signin';
+    this.url = '/sign_in';
   }
 
   angular.module('states.sessions', []).config([

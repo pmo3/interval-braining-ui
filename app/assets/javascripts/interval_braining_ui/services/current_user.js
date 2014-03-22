@@ -24,6 +24,7 @@
       });
 
       currentUser.clear = function() { user = null; };
+
       currentUser.get = function() {
         if(promise) { return promise; }
         var request = userResource.get({id: 'me'});
@@ -32,6 +33,7 @@
         });
         return promise = request.$promise;
       };
+
       currentUser.set = function(currUser) { user = currUser; };
 
       return currentUser;
