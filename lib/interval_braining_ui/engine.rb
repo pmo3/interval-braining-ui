@@ -5,6 +5,7 @@ module IntervalBrainingUI
     initializer 'interval_braining_ui.assets.precompile'  do |app|
       app.config.assets.paths << Rails.root.join('app', 'assets', 'fonts')
       app.config.assets.precompile += %w[.svg .eot .woff .ttf]
+      Mime::Type.register 'font/opentype', :font
     end
 
     initializer 'interval_braining_ui.inflections' do
