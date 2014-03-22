@@ -1,6 +1,5 @@
 (function() {
   var app = angular.module('IntervalBraining', [
-    'ng-rails-csrf',
     'ngResource',
     'factories.stateFactory',
     'states',
