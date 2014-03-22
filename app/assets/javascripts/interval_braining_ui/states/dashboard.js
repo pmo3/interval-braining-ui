@@ -1,7 +1,7 @@
 (function() {
 
   function StateDashboard($stateProvider, $templateUrl) {
-    this.breadcrumb = 'Dashbaord';
+    this.breadcrumb = 'Dashboard';
 
     this.data = {
       pageTitle: {
