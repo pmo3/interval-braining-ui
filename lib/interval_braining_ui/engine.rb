@@ -11,6 +11,15 @@ module IntervalBrainingUI
     initializer 'interval_braining_ui.inflections' do
       ActiveSupport::Inflector.inflections(:en) do |inflect|
         inflect.acronym 'UI'
+        inflect.acronym 'XSRF'
+      end
+    end
+
+    initializer 'interval_braining_ui.xsrf_token' do
+      ActiveSupport.on_load(:action_controller) do
+        include IntervalBrainingUI::XSRFCookieHelper
+        after_action :set_xsrf_cookie
+        alias_method_chain(:verified_request?, :xsrf_cookie)
       end
     end
   end
