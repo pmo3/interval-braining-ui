@@ -1,25 +1,32 @@
-<div card-container class="col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-3">
+<div card-container class="col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-3 col-xl-4 col-xl-offset-4">
   <form accept-charset="UTF-8" class="card" id="new_user" method="post" novalidate="novalidate" ng-controller="RegistrationsController as registration" ng-submit="registration.submit()">
-    <h3>Sign up</h3>
+    <h3>Sign Up</h3>
     <hr>
-    <div>
-      <label for="email">Email</label>
-      <input autofocus="autofocus" id="email" name="email" type="email" required ng-model="registration.email" />
+    <div class="form-group">
+      <label class="sr-only" for="email">Email</label>
+      <input class="form-control input-lg" autofocus="autofocus" id="email" name="email" placeholder="Email" type="email" required ng-model="registration.email" />
     </div>
 
-    <div>
-      <label for="password">Password</label>
-      <input id="password" name="password" type="password" ng-model="registration.password" required />
+    <div class="form-group">
+      <label class="sr-only" for="password">Password</label>
+      <input class="form-control input-lg" id="password" name="password" type="password" placeholder="Password" ng-model="registration.password" required />
     </div>
 
-    <div>
-      <label for="password_confirmation">Password confirmation</label>
-      <input id="password_confirmation" name="password_confirmation" type="password" ng-model="registration.passwordConfirmation" required match="registration.password" />
+    <div class="form-group">
+      <label class="sr-only" for="password_confirmation">Password confirmation</label>
+      <input class="form-control input-lg" id="password_confirmation" name="password_confirmation" placeholder="Password confirmation" type="password" ng-model="registration.passwordConfirmation" required match="registration.password" />
     </div>
 
-    <div>
-      <input name="commit" type="submit" value="Sign up" />
+    <div class="form-group clearfix">
+      <button class="btn btn-primary btn-lg pull-right" name="commit" type="submit">
+        <span class="fa fa-lg fa-rocket margin-right-sm"></span>
+        Sign up
+      </button>
     </div>
+
   </form>
-  <a ui-sref="sessions.new">Sign in</a>
+  <a class="btn btn-default pull-left margin-top-xs-2" ui-sref="sessions.new">
+    <span class="fa fa-lg fa-angle-left margin-right-sm"></span>
+    <span>Sign in</span>
+  </a>
 </div>

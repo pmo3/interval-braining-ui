@@ -2,21 +2,27 @@
   <form accept-charset="UTF-8" class="card" id="new_session" method="post" ng-controller="SessionsController as user" ng-submit="user.submit()" novalidate>
     <h3>Sign in</h3>
     <hr>
-    <div>
-      <label for="email">Email</label>
-      <input autofocus="autofocus" id="email" name="email" type="email" ng-model="user.email" required/>
+    <div class="form-group">
+      <label class="sr-only" for="email">Email</label>
+      <input class="form-control input-lg" autofocus="autofocus" id="email" name="email" placeholder="Email" type="email" ng-model="user.email" required/>
     </div>
-    <div>
-      <label for="password">Password</label>
-      <input id="password" name="password" type="password" ng-model="user.password" required min="8" />
+    <div class="form-group">
+      <label class="sr-only" for="password">Password</label>
+      <input class="form-control input-lg" id="password" name="password" placeholder="Password" type="password" ng-model="user.password" required min="8" />
     </div>
-    <div>
+    <div class="checkbox margin-left-xs-1">
       <input id="remember_me" name="remember_me" type="checkbox" ng-model="user.rememberMe" />
-      <label for="remember_me">Remember me</label>
+      <label for="remember_me"><span>Remember me</span></label>
     </div>
-    <div>
-      <input name="commit" type="submit" value="Sign in" />
+    <div class="form-group clearfix">
+      <button class="btn btn-primary btn-lg pull-right" name="commit" type="submit">
+        <span>Sign In</span>
+        <span class="fa fa-caret-right margin-left-xs-2"></span>
+      </button>
     </div>
   </form>
-  <a ui-sref="registrations.new">Sign up</a>
+  <a class="btn btn-default pull-left margin-top-xs-2" ui-sref="registrations.new">
+    <span class="fa fa-lg fa-rocket margin-right-sm"></span>
+    <span>Sign Up</span>
+  </a>
 </div>
