@@ -6,6 +6,6 @@ IntervalBrainingUI::Engine.routes.draw do
 
   get 'application.manifest' => ApplicationManifest
 
-  get '*n' => 'application#index'
+  get '*ignored' => 'application#index'
 
 end
