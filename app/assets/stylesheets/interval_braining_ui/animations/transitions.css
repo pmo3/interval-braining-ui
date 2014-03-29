@@ -1,0 +1,47 @@
+.transition-all.transition-active {
+  -moz-transition: all cubic-bezier(.25, .46, .45, .94) 0.5s;
+  -webkit-transition: all cubic-bezier(.25, .46, .45, .94) 0.5s;
+  transition: all cubic-bezier(0.25, 0.46, 0.45, 0.94) 10s;
+}
+
+.transition-all {
+  -moz-transition: all cubic-bezier(.25, .46, .45, .94) 0.5s;
+  -webkit-transition: all cubic-bezier(.25, .46, .45, .94) 0.5s;
+  transition: all cubic-bezier(0.25, .046, 0.45, 0.94) 10s;
+}
+
+.alert {
+  border-radius: 0;
+  box-shadow: 0 .12em .125em 0 rgba(63, 63, 63, .3);
+}
+
+.alert-default {
+  background-color: #fff;
+}
+
+[growl-notifications] .ng-enter {
+  -moz-transform: translate3d(150%, 0, 0);
+  -webkit-transform: translate3d(150%, 0, 0);
+  transform: translate3d(150%, 0, 0);
+
+  -moz-transition: -moz-transform 1s ease;
+  -webkit-transition: -webkit-transform 1s ease;
+  transition: transform 1s ease;
+}
+[growl-notifications] .ng-enter.ng-enter-active {
+  -webkit-transform: translate3d(0, 0, 0);
+}
+
+[growl-notifications] .ng-leave {
+  -moz-transform: translate3d(0, 0, 0);
+  -webkit-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
+
+  -moz-transition: -moz-transform 1s ease;
+  -webkit-transition: -webkit-transform 1s ease;
+  transition: transform 1s ease;
+}
+
+[growl-notifications] .ng-leave.ng-leave-active {
+  -webkit-transform: translate3d(150%, 0, 0);
+}

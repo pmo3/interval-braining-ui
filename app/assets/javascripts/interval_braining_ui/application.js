@@ -1,6 +1,7 @@
 //= require interval_braining_ui/vendor/jquery
 //= require angular
 //= require angular-resource
+//= require angular-animate
 //= require interval_braining_ui/vendor/angular/ui-router
 //= require interval_braining_ui/vendor/angular/ui-router-hooks-before-state
 //= require interval_braining_ui/vendor/angular/ui-router-breadcrumbs

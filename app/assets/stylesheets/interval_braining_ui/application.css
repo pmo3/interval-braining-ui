@@ -5,4 +5,5 @@
  *= require interval_braining_ui/theme
  *= require interval_braining_ui/helpers
  *= require interval_braining_ui/components
+ *= require interval_braining_ui/animations/transitions
 */

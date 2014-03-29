@@ -1,6 +1,7 @@
 (function() {
   var app = angular.module('IntervalBraining', [
     'ngResource',
+    'ngAnimate',
     'factories.stateFactory',
     'states',
     'resources.user',
