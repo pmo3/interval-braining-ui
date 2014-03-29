@@ -7,7 +7,8 @@
     'states.home',
     'states.registrations',
     'states.sessions',
-    'states.dashboard'
+    'states.dashboard',
+    'states.decks'
   ]);
 
   states.config([
