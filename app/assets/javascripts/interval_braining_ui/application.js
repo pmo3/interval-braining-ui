@@ -8,6 +8,8 @@
 //= require interval_braining_ui/vendor/angular/ui-router-helpers
 //= require interval_braining_ui/vendor/angular/angular-input-match
 //= require interval_braining_ui/vendor/angular/cardigan
+//= require interval_braining_ui/vendor/angular/angular-sanitize
+//= require interval_braining_ui/vendor/angular/growl-notifications
 //
 //= require interval_braining_ui/app/interval_braining
 //

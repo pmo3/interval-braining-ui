@@ -14,7 +14,9 @@
     'directives.navbarCollapse',
     'directives.dropdown',
     'directives.pageTitle',
-    'directives.pageHeader'
+    'directives.pageHeader',
+    'ngSanitize',
+    'growlNotifications'
   ]);
 
   // add some services to the $rootScope

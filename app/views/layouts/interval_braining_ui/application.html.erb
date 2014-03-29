@@ -13,8 +13,11 @@
     <div ng-include="$templateUrl.get('interval_braining_ui/components/navbar.html')"></div>
     <div class="container-fluid">
       <div ng-include="$templateUrl.get('interval_braining_ui/components/page_header.html')"></div>
-      <div ui-view class="row">
-      </div>
+      <div class="position-relative">
+        <div growl-notifications></div>
+        <div ui-view class="row">
+        </div>
+      <div>
     </div>
     <%= javascript_include_tag 'application' %>
   </body>
