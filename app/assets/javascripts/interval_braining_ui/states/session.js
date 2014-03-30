@@ -13,7 +13,11 @@
     };
 
     this.name = 'sessions.new'
-    this.templateUrl = $templateUrl.get('interval_braining_ui/sessions/new.html');
+    this.views = {
+      'content@': {
+        templateUrl: $templateUrl.get('interval_braining_ui/sessions/new.html')
+      }
+    };
     this.url = '/sign_in';
   }
 

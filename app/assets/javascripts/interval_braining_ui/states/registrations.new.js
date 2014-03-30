@@ -13,7 +13,11 @@
     };
 
     this.name = 'registrations.new'
-    this.templateUrl = $templateUrl.get('interval_braining_ui/registrations/new.html');
+    this.views = {
+      'content@': {
+        templateUrl: $templateUrl.get('interval_braining_ui/registrations/new.html')
+      }
+    };
     this.url = '/sign_up';
   }
 

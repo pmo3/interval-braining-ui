@@ -11,7 +11,11 @@
     };
 
     this.name = 'decks.index'
-    this.templateUrl = $templateUrl.get('interval_braining_ui/decks/index.html');
+    this.views = {
+      'content@': {
+        templateUrl: $templateUrl.get('interval_braining_ui/decks/index.html')
+      }
+    };
     this.url = 'decks';
   }
 

@@ -8,12 +8,15 @@
         defaultValue: 'Dashboard'
       },
       pageHeader: {
-        class: 'blue'
       }
     };
 
     this.name = 'dashboard';
-    this.template = 'Something?';
+    this.views = {
+      'content@': {
+        template: '<h4>Dashboards, dashboards, dashboards.</h4>'
+      }
+    };
     this.parent = 'home';
     this.url = 'dashboard';
   }

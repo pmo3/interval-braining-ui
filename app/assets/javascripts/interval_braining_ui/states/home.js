@@ -7,12 +7,15 @@
         defaultValue: 'Welcome!'
       },
       pageHeader: {
-        class: 'blue'
       }
     };
     this.name = 'home';
     this.parent = 'root';
-    this.template = '';
+    this.views = {
+      'content@': {
+        template: '<h4>Hello, this is the home page</h4>'
+      }
+    };
     this.url = '';
   }
 
