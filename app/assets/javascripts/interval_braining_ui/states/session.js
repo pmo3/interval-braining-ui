@@ -14,7 +14,7 @@
 
     this.name = 'sessions.new'
     this.views = {
-      'content@': {
+      'content': {
         templateUrl: $templateUrl.get('interval_braining_ui/sessions/new.html')
       }
     };
@@ -23,11 +23,16 @@
 
   angular.module('states.sessions', []).config([
     'stateFactoryProvider',
-    function(stateFactory) {
+    '$templateUrlProvider',
+    function(stateFactory, $templateUrl) {
       stateFactory.$new({
         abstract: true,
         name: 'sessions',
-        template: '<div ui-view></div>',
+        views: {
+          'layout': {
+            templateUrl: $templateUrl.get('interval_braining_ui/layouts/navbar_page_header_layout.html')
+          }
+        },
         url: ''
       });
       stateFactory.$new(StateSessionNew);

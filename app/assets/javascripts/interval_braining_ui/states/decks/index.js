@@ -12,7 +12,10 @@
 
     this.name = 'decks.index'
     this.views = {
-      'content@': {
+      'layout@': {
+        templateUrl: $templateUrl.get('interval_braining_ui/layouts/navbar_page_header_layout.html')
+      },
+      'content@decks.index': {
         templateUrl: $templateUrl.get('interval_braining_ui/decks/index.html')
       }
     };

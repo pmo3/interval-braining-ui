@@ -13,7 +13,10 @@
 
     this.name = 'dashboard';
     this.views = {
-      'content@': {
+      'layout': {
+        templateUrl: $templateUrl.get('interval_braining_ui/layouts/navbar_page_header_layout.html')
+      },
+      'content': {
         template: '<h4>Dashboards, dashboards, dashboards.</h4>'
       }
     };

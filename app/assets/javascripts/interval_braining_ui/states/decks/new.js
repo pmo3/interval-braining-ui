@@ -13,7 +13,7 @@
     this.name = 'decks.new'
     this.parent = 'decks.index'
     this.views = {
-      'content@': {
+      'content@decks.index': {
         templateUrl: $templateUrl.get('interval_braining_ui/decks/new.html')
       }
     };

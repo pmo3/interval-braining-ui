@@ -14,7 +14,7 @@
 
     this.name = 'registrations.new'
     this.views = {
-      'content@': {
+      'content': {
         templateUrl: $templateUrl.get('interval_braining_ui/registrations/new.html')
       }
     };
@@ -23,11 +23,16 @@
 
   angular.module('states.registrations', []).config([
     'stateFactoryProvider',
-    function(stateFactory) {
+    '$templateUrlProvider',
+    function(stateFactory, $templateUrl) {
       stateFactory.$new({
         abstract: true,
         name: 'registrations',
-        template: '<div ui-view></div>',
+        views: {
+          'layout': {
+            templateUrl: $templateUrl.get('interval_braining_ui/layouts/navbar_page_header_layout.html')
+          }
+        },
         url: ''
       });
       stateFactory.$new(StateRegistrationNew);
