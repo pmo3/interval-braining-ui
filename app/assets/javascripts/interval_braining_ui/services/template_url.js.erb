@@ -3,7 +3,11 @@
   # Leave regexp open ended to include preprocessed templates (.erb, etc.)
   template_regexp = /(?:\/assets\/templates\/)(.*\.html)/
   template_files = Rails.application.assets.each_file.to_a.join("\n").scan(template_regexp).flatten
-  templates = Hash[template_files.map {|file| [file, asset_url(file)] }]
+  template_urls = template_files.map do |file|
+    depend_on_asset(file)
+    [file, asset_url(file)]
+  end
+  templates = Hash[template_urls]
 %>
 
 (function() {
