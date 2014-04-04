@@ -6,5 +6,6 @@
     'ngResource',
     'resources.user',
     'resources.session',
+    'resources.deck',
   ]);
 })();
