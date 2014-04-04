@@ -8,7 +8,6 @@
     this.resolve = {
       currUser: [
         'currentUser',
-        '$state',
         function(currentUser) {
           return currentUser.get().catch(function() { return null; });
         }
@@ -16,8 +15,7 @@
       redirect: [
         '$state',
         'currentUser',
-        'currUser',
-        function($state, currentUser, currUser) {
+        function($state, currentUser) {
           if(currentUser.authenticated) { return; }
           $state.go('sessions.new');
         }

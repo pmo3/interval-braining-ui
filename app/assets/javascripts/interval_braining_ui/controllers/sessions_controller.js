@@ -10,8 +10,8 @@
         password: this.password,
         remember_me: this.rememberMe
       });
-      request.$promise.then(function(user) {
-        currentUser.set(user);
+      request.$promise.then(function(response) {
+        currentUser.set(response.data);
         $state.go('dashboard');
       });
     };
