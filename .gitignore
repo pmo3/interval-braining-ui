@@ -7,3 +7,6 @@ test/dummy/tmp/
 test/dummy/.sass-cache
 test/dummy/public/assets/
 test/dummy/db/schema.rb
+
+bower_components
+node_modules
