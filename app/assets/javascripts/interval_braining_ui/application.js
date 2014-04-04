@@ -20,6 +20,8 @@
 //
 //= require interval_braining_ui/controllers/registrations_controller
 //= require interval_braining_ui/controllers/sessions_controller
+//= require interval_braining_ui/controllers/decks_controller
+//= require interval_braining_ui/controllers/deck_controller
 //
 //= require interval_braining_ui/services/current_user
 //= require interval_braining_ui/services/template_url

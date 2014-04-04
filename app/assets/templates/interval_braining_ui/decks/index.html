@@ -1,1 +1,14 @@
-<h1>Decks</h1>
+<div class="container-fluid" ng-controller="DecksController as decks">
+  <div class="row">
+    <h3 class="col-xs-12" ng-hide="decks.owned.length">No decks to display.</h3>
+  </div>
+
+  <ul class="row list-unstyled">
+    <li ng-repeat="deck in decks.owned" class="col-md-6 col-lg-4">
+      <div class="card margin-top-xs-2">
+        <div><b>Name:</b>&nbsp;<span>{{deck.name}}</span></div>
+        <div><b>Description:</b>&nbsp;<span>{{deck.description}}</span></div>
+      </div>
+    </li>
+  </ul>
+</div>
