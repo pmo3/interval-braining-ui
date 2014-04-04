@@ -14,15 +14,8 @@
 //= require interval_braining_ui/app/interval_braining
 //
 //= require interval_braining_ui/factories/state_factory
-//= require interval_braining_ui/states/root
-//= require interval_braining_ui/states/home
-//= require interval_braining_ui/states/session
-//= require interval_braining_ui/states/registrations.new
-//= require interval_braining_ui/states/decks/index
-//= require interval_braining_ui/states/decks/new
-//= require interval_braining_ui/states/dashboard
-//= require interval_braining_ui/app/states
 //
+//= require interval_braining_ui/states
 //= require interval_braining_ui/resources
 //
 //= require interval_braining_ui/controllers/registrations_controller

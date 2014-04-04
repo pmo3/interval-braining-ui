@@ -1,3 +1,6 @@
+//= require_self
+//= require_tree ./states
+
 (function() {
   var states = angular.module('states', [
     'ui.router',
