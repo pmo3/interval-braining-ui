@@ -24,7 +24,7 @@ describe('Resource: user', function() {
   describe('save():', function() {
 
     it('makes a POST request with the given creation data', function() {
-      $httpBackend.expect('POST', '/users.json', userData).respond({id: 1, email: userData.email});
+      $httpBackend.expect('POST', '/api/v1/users.json', userData).respond({id: 1, email: userData.email});
       userResource.save(userData);
       $httpBackend.flush();
     });
@@ -34,7 +34,7 @@ describe('Resource: user', function() {
   describe('get():', function() {
 
     it('makes a GET request for the requested user', function() {
-      $httpBackend.expect('GET', '/users/me.json', null).respond(userData);
+      $httpBackend.expect('GET', '/api/v1/users/me.json', null).respond(userData);
       userResource.get({id: 'me'});
       $httpBackend.flush();
     });

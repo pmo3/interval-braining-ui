@@ -6,7 +6,7 @@
   userResource.factory('userResource', [
     '$resource',
     function($resource) {
-      return $resource('/users/:id.json');
+      return $resource('/api/v1/users/:id.json');
     }
   ]);
 })();
