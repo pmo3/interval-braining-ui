@@ -20,7 +20,7 @@
         },
         'delete': {
           method: 'DELETE',
-          url: '/users/sign_out.json',
+          url: '/api/v1/users/sign_out.json',
           interceptor: {
             response: function(response) {
               $rootScope.$broadcast('$sessionDestroy');
@@ -30,7 +30,7 @@
         }
       };
 
-      return $resource('/users/sign_in.json', {}, sessionActions);
+      return $resource('/api/v1/users/sign_in.json', {}, sessionActions);
     }
   ]);
 })();
