@@ -23,8 +23,7 @@
 //= require interval_braining_ui/states/dashboard
 //= require interval_braining_ui/app/states
 //
-//= require interval_braining_ui/resources/user
-//= require interval_braining_ui/resources/session
+//= require interval_braining_ui/resources
 //
 //= require interval_braining_ui/controllers/registrations_controller
 //= require interval_braining_ui/controllers/sessions_controller
