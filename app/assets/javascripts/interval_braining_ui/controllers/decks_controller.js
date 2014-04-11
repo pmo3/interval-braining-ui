@@ -6,7 +6,7 @@
       get: function() {
         var out;
         if(!ownedPromise) {
-          owned = deckResource.query({});
+          owned = deckResource.query({creatorId: currentUser.id});
           ownedPromise = owned.$promise;
         }
         return owned;
