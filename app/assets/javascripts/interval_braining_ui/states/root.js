@@ -6,7 +6,7 @@
     this.name = 'root';
 
     this.resolve = {
-      currUser: [
+      currentUserLoader: [
         'currentUser',
         function(currentUser) {
           return currentUser.get().catch(function() { return null; });
@@ -15,7 +15,8 @@
       redirect: [
         '$state',
         'currentUser',
-        function($state, currentUser) {
+        'currentUserLoader',
+        function($state, currentUser, currentUserLoader) {
           if(currentUser.authenticated) { return; }
           $state.go('sessions.new');
         }
