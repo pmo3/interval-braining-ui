@@ -1,11 +1,13 @@
 (function() {
   function RegistrationsController(userResource, currentUser, $state) {
+    this.displayName = '';
     this.email = '';
     this.password = '';
     this.passwordConfirmation = '';
 
     this.submit = function() {
       var request = userResource.save({
+        display_name: this.displayName,
         email: this.email,
         password: this.password,
         password_confirmation: this.passwordConfirmation

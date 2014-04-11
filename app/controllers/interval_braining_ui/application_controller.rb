@@ -2,7 +2,7 @@ module IntervalBrainingUI
   class ApplicationController < ActionController::Base
 
     def index
-      render :nothing => true, :layout => 'interval_braining_ui/application'
+      render :text => '', :layout => 'interval_braining_ui/application'
     end
 
   end

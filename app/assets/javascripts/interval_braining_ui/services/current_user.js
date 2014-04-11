@@ -15,6 +15,10 @@
           enumerable: true,
           get: function() { return !!user; }
         },
+        displayName: {
+          enumerable: true,
+          get: function() { return user.display_name; }
+        },
         email: {
           enumerable: true,
           get: function() { return user.email; }
