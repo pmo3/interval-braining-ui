@@ -17,7 +17,7 @@
         },
         displayName: {
           enumerable: true,
-          get: function() { return user.display_name; }
+          get: function() { return user.displayName; }
         },
         email: {
           enumerable: true,
