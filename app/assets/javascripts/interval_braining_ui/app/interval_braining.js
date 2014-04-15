@@ -2,6 +2,7 @@
   var app = angular.module('IntervalBraining', [
     'ngResource',
     'ngAnimate',
+    'services.activeRecord',
     'factories.stateFactory',
     'states',
     'resources',

@@ -2,6 +2,7 @@
 //= require angular
 //= require angular-resource
 //= require angular-animate
+//= require interval_braining_ui/vendor/breeze
 //= require interval_braining_ui/vendor/angular/ui-router
 //= require interval_braining_ui/vendor/angular/ui-router-hooks-before-state
 //= require interval_braining_ui/vendor/angular/ui-router-breadcrumbs
@@ -24,6 +25,7 @@
 //= require interval_braining_ui/controllers/deck_controller
 //
 //= require interval_braining_ui/services/string_transform
+//= require interval_braining_ui/services/active_record
 //= require interval_braining_ui/services/current_user
 //= require interval_braining_ui/services/template_url
 //= require interval_braining_ui/services/page_title
