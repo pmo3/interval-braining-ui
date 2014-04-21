@@ -3,7 +3,8 @@ source 'https://rubygems.org'
 gemspec
 
 group :development, :test do
-  gem 'jasmine-rails'
+ gem 'bower-rails', :git => 'https://github.com/42dev/bower-rails.git', :ref => 'f4c948f1e0c94872451404e8e9cfeb0c67fb2c38'
+ gem 'jasmine-rails'
 end
 
 group :test do
