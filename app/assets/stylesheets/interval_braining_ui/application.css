@@ -1,7 +1,8 @@
 /*
- *= require interval_braining_ui/vendor/twitter_bootstrap/bootstrap
- *= require font-awesome
- *= require interval_braining_ui/vendor/cardigan/cardigan
+ *= require bootstrap/dist/css/bootstrap
+ *= require font-awesome-bower/css/font-awesome
+ *= require cardigan/dist/cardigan
+ *= require webfont-OpenSans-Light/dist/OpenSans-Light
  *= require interval_braining_ui/theme
  *= require interval_braining_ui/helpers
  *= require interval_braining_ui/components

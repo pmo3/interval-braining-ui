@@ -1,15 +1,15 @@
-//= require interval_braining_ui/vendor/jquery
-//= require angular
-//= require angular-resource
-//= require angular-animate
-//= require interval_braining_ui/vendor/angular/ui-router
-//= require interval_braining_ui/vendor/angular/ui-router-hooks-before-state
-//= require interval_braining_ui/vendor/angular/ui-router-breadcrumbs
-//= require interval_braining_ui/vendor/angular/ui-router-helpers
-//= require interval_braining_ui/vendor/angular/angular-input-match
-//= require interval_braining_ui/vendor/angular/cardigan
-//= require interval_braining_ui/vendor/angular/angular-sanitize
-//= require interval_braining_ui/vendor/angular/growl-notifications
+//= require jquery/dist/jquery
+//= require angular/angular
+//= require angular-resource/angular-resource
+//= require angular-animate/angular-animate
+//= require angular-ui-router/release/angular-ui-router
+//= require angular-ui-router-hooks-before-state/dist/angular-ui-router-hooks-before-state
+//= require angular-ui-router-breadcrumbs/dist/angular-ui-router-breadcrumbs
+//= require angular-ui-router-helpers/dist/angular-ui-router-helpers
+//= require angular-input-match/dist/angular-input-match
+//= require cardigan/dist/cardigan
+//= require angular-sanitize/angular-sanitize
+//= require angular-growl-notifications/dist/growl-notifications
 //
 //= require interval_braining_ui/app/interval_braining
 //

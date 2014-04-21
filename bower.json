@@ -1,0 +1,20 @@
+{
+  "dependencies": {
+    "angular": "~1.2.8",
+    "angular-animate": "~1.2.8",
+    "angular-resource": "~1.2.8",
+    "angular-growl-notifications": "~0.7.0",
+    "angular-input-match": "~0.0.2",
+    "angular-mocks": "~1.2.8",
+    "angular-ui-router": "~0.2.10",
+    "angular-ui-router-breadcrumbs": "~0.0.2",
+    "angular-ui-router-helpers": "~0.0.2",
+    "angular-ui-router-hooks-before-state": "~0.0.2",
+    "bootstrap": "~3.1.1",
+    "cardigan": "~0.0.2",
+    "font-awesome-bower": "~4.0.3",
+    "jquery": "~2.1.0",
+    "webfont-OpenSans-Light": "~0.2.0"
+  },
+  "name": "interval_braining_ui"
+}
