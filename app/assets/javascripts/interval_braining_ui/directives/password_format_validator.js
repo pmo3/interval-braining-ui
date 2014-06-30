@@ -13,11 +13,13 @@
       require: 'ngModel',
       link: function(scope, element, attrs, ngModel) {
         ngModel.$parsers.push(function(value) {
-          var status = true;
+          var truths = 0;
           angular.forEach(PASSWORD_FORMATS, function(regex) {
-            status = status && regex.test(value) && value.length >= 6;
+            if(regex.test(value)) {
+              truths = truths + 1;
+            }
           });
-          ngModel.$setValidity('password-format', status);
+          ngModel.$setValidity('password-format', truths >= 3 && value.length >= 8);
           return value;
         });
       }

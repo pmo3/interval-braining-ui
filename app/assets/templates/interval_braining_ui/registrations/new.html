@@ -5,13 +5,17 @@
     <div class="form-group">
       <label class="sr-only" for="email">Display name</label>
       <input class="form-control input-lg" autofocus="autofocus" id="display_name" name="display_name" placeholder="Display name" type="text" required ng-model="registration.displayName" />
+      <div ng-if="interacted(userForm.display_name)" ng-messages="userForm.display_name.$error">
+      <div ng-message="required">This field cannot be left blank</div>
+      </div>
     </div>
 
     <div class="form-group">
       <label class="sr-only" for="email">Email</label>
-      <input class="form-control input-lg" id="email" name="email" placeholder="Email" type="email" required ng-model="registration.email" />
+      <input class="form-control input-lg" id="email" name="email" placeholder="Email" type="email" ng-minlength="6" required ng-model="registration.email" />
       <div ng-if="interacted(userForm.email)" ng-messages="userForm.email.$error">
       <div ng-message="required">You must enter a valid email address</div>
+      <div ng-message="minlength">Your email address must be at least 6 characters</div>
       </div>
     </div>
 
@@ -20,18 +24,17 @@
       <input class="form-control input-lg" id="password" name="password" type="password" placeholder="Password" ng-model="registration.password" password-format-validator required />
       <div ng-if="interacted(userForm.password)" ng-messages="userForm.password.$error">
       <div ng-message="required">You must enter a valid password</div>
-      <div ng-message="password-format">Your password must include at least one of the following:
-      A lowercase letter, an uppercase letter, a number, and a special character. It must also be
-      at least 6 characters long</div>
+      <div ng-message="password-format">Passwords must be at least 8 characters long and
+      include at least three of the following: uppercase letter, lowercase letter, number
+      and special character</div>
       </div>
     </div>
 
     <div class="form-group">
       <label class="sr-only" for="password_confirmation">Password confirmation</label>
-      <input class="form-control input-lg" id="password_confirmation" name="password_confirmation" placeholder="Password confirmation" type="password" ng-model="registration.passwordConfirmation"   match-validator="registration.password" ng-minlength="6" required />
+      <input class="form-control input-lg" id="password_confirmation" name="password_confirmation" placeholder="Password confirmation" type="password" ng-model="registration.passwordConfirmation"   match-validator="registration.password" required />
       <div ng-if="interacted(userForm.password_confirmation)" ng-messages="userForm.password_confirmation.$error">
       <div ng-message="required">This field cannot be left blank</div>
-      <!-- <div ng-message="minlength">The value you have entered is too short</div> -->
       <div ng-message="match">Your passwords don't match</div>
       </div>
     </div>
