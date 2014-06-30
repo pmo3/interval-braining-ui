@@ -1,54 +1,67 @@
+//= require test_helper
+
 describe('SessionsController', function(){
-  var sessionsController, growlNotifications, sessionResource;
-  var sessionData = {email: 'foo@example.com', password: 'qwer1234', remember_me: false};
+
+  var currentUser, growlNotifications, $httpBackend, sessionData,
+    sessionsController, usersSignInExpectation, usersMeEpectation;
+  sessionData = {
+    email: 'foo@example.com',
+    password: 'qwer1234',
+    remember_me: false
+  };
 
   beforeEach(function(){
-      module('IntervalBraining');
+    module('IntervalBraining');
 
-  inject(function($injector, $controller){
+    inject(function($controller, sessionResource, _$httpBackend_, _growlNotifications_, _currentUser_) {
+      currentUser = _currentUser_;
+      growlNotifications = _growlNotifications_;
+      $httpBackend = _$httpBackend_;
 
-    sessionResource = $injector.get('sessionResource');
-    growlNotifications = $injector.get('growlNotifications');
-    currentUser = $injector.get('currentUser');
-
-    spyOn(growlNotifications, 'add');
-    sessionsController = $controller('SessionsController', {sessionResource : sessionResource, growlNotifications : growlNotifications, currentUser : currentUser});
-
-    });
+      sessionsController = $controller('SessionsController', {
+        currentUser: currentUser,
+        growlNotifications: growlNotifications,
+        sessionResource: sessionResource
       });
+    });
 
-  afterEach(inject(function($httpBackend){
-      $httpBackend.verifyNoOutstandingExpectation();
-      $httpBackend.verifyNoOutstandingRequest();
-    }));
-
-
-  it('adds a growl notification when sign in fails', inject(function($httpBackend){
-    $httpBackend.expect('POST', '/api/v1/users/sign_in.json', sessionData).respond(401, '');
-    $httpBackend.expect('GET', '/api/v1/users/me.json').respond(401, ''); 
+    usersSignInExpectation = $httpBackend.expect('POST', '/api/v1/users/sign_in.json', sessionData);
+    usersMeExpectation = $httpBackend.expect('GET', '/api/v1/users/me.json');
+    // TODO: better isolate tests so this expectation is not required.
     $httpBackend.expect('GET', '/assets/interval_braining_ui/layouts/navbar_page_header_layout.html').respond(null);
+  });
+
+
+  afterEach(function() {
+    $httpBackend.verifyNoOutstandingExpectation();
+    $httpBackend.verifyNoOutstandingRequest();
+  });
+
+
+  it('adds a growl notification when sign in fails', function() {
+    usersSignInExpectation.respond(401, '{ "error": "Error msg" }');
+    usersMeExpectation.respond(401, '');
+    // TODO: better isolate tests so this expectation is not required.
     $httpBackend.expect('GET', '/assets/interval_braining_ui/sessions/new.html').respond(null);
-    sessionsController.email = sessionData.email;
-    sessionsController.password = sessionData.password;
-    sessionsController.remember_me = sessionData.remember_me;
+    spyOn(growlNotifications, 'add');
+
+    angular.extend(sessionsController, sessionData);
     sessionsController.submit();
     $httpBackend.flush();
+    expect(growlNotifications.add).toHaveBeenCalledWith('Error msg', 'alert', 5000);
+  });
 
-    expect(growlNotifications.add).toHaveBeenCalled();
-    }));
 
-  it('sets currentUser on successful POST', inject(function($httpBackend){
+  it('sets currentUser on successful POST', function() {
+    var sessionResponse = { id: 1, email: sessionData.email };
+    usersSignInExpectation.respond(sessionResponse);
+    usersMeExpectation.respond(sessionResponse);
     spyOn(currentUser, 'set');
-    $httpBackend.when('POST', '/api/v1/users/sign_in.json', sessionData).respond({id: 1, email: sessionData.email});
-    $httpBackend.expect('GET', '/api/v1/users/me.json').respond({id: 1, email: sessionData.email}); 
-    $httpBackend.expect('GET', '/assets/interval_braining_ui/layouts/navbar_page_header_layout.html').respond(null);
 
-    sessionsController.email = sessionData.email;
-    sessionsController.password = sessionData.password;
-    sessionsController.remember_me = sessionData.remember_me;
+    angular.extend(sessionsController, sessionData);
     sessionsController.submit();
     $httpBackend.flush();
-    expect(currentUser.set).toHaveBeenCalled();
-    expect(currentUser.set).toHaveBeenCalledWith({id: 1, email: sessionData.email});
-  }));
+    expect(currentUser.set).toHaveBeenCalledWith(sessionResponse);
+  });
+
 });
