@@ -1,5 +1,5 @@
 (function() {
-  function RegistrationsController(userResource, currentUser, $state) {
+  function RegistrationsController($scope, userResource, currentUser, $state) {
     this.displayName = '';
     this.email = '';
     this.password = '';
@@ -17,10 +17,16 @@
         $state.go('dashboard');
       });
     };
+
+   $scope.interacted = function(field) {
+      return $scope.submitted || field.$dirty;
+    };
+  }
   }
 
   var app = angular.module('IntervalBraining');
   app.controller('RegistrationsController', [
+    '$scope,'
     'userResource',
     'currentUser',
     '$state',
