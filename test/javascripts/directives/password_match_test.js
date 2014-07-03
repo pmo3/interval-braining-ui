@@ -1,4 +1,4 @@
-//=require test_helper
+//= require test_helper
 
 describe('password match validation', function() {
   var $scope, form;

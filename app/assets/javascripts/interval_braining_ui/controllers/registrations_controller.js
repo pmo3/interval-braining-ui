@@ -4,8 +4,10 @@
     this.email = '';
     this.password = '';
     this.passwordConfirmation = '';
+    $scope.submitted = false;
 
     this.submit = function() {
+      $scope.submitted = true;
       var request = userResource.save({
         display_name: this.displayName,
         email: this.email,
@@ -21,12 +23,11 @@
    $scope.interacted = function(field) {
       return $scope.submitted || field.$dirty;
     };
-  }
-  }
+  };
 
   var app = angular.module('IntervalBraining');
   app.controller('RegistrationsController', [
-    '$scope,'
+    '$scope',
     'userResource',
     'currentUser',
     '$state',
