@@ -22,11 +22,10 @@ describe('password match validation', function() {
       expect(form.password_confirmation.$valid).toBe(true);
     });
 
-    it('should return false and undefined when passwords do not match', function() {
+    it('should return false when passwords do not match', function() {
       form.password.$setViewValue('test1.Test');
       form.password_confirmation.$setViewValue('test1.test');
       $scope.$digest();
-      expect($scope.model.passwordConfirmation).toBeUndefined();
       expect(form.password_confirmation.$valid).toBe(false);
     });
 });

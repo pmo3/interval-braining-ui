@@ -16,14 +16,12 @@ describe('password format validation', function() {
   it('should fail when password length < 8 characters', function() {
     form.password.$setViewValue('t1.esT');
     $scope.$digest();
-    expect($scope.model.password).toBeUndefined();
     expect(form.password.$valid).toBe(false);
   });
 
   it('should fail when missing required characters', function() {
     form.password.$setViewValue('testTest');
     $scope.$digest();
-    expect($scope.model.password).toBeUndefined();
     expect(form.password.$valid).toBe(false);
   });
 
@@ -31,7 +29,6 @@ describe('password format validation', function() {
   it('should pass when requirements are met', function() {
     form.password.$setViewValue('test1.Test');
     $scope.$digest();
-    expect($scope.model.password).toBe('test1.Test');
     expect(form.password.$valid).toBe(true);
   });
 });
