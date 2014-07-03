@@ -4,8 +4,10 @@
     this.email = '';
     this.password = '';
     this.passwordConfirmation = '';
+    $scope.submitted = false;
 
     this.submit = function() {
+      $scope.submitted = true;
       var request = userResource.save({
         display_name: this.displayName,
         email: this.email,
