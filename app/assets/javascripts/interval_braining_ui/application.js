@@ -1,5 +1,6 @@
 //= require jquery/dist/jquery
 //= require angular/angular
+//= require angular-messages/angular-messages
 //= require angular-resource/angular-resource
 //= require angular-animate/angular-animate
 //= require angular-ui-router/release/angular-ui-router

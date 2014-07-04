@@ -5,7 +5,7 @@
     var PASSWORD_FORMATS = [
       /[^\w\s]+/, //special characters
       /[A-Z]/, //uppercase letters
-      /\w/, //other letters
+      /[a-z]/, //lowercase letters
       /\d/ //numbers
     ];
 
